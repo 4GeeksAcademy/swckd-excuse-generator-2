@@ -1,3 +1,7 @@
+window.onload = function() {
+    excuseGenerator();
+ };
+ 
 let who = ['The dog', 'My grandma', 'His turtle', 'My bird'];
 let action = ['ate', 'peed', 'crushed', 'broke'];
 let what = ['my homework', 'the keys', 'the car'];
@@ -10,10 +14,13 @@ function randomNumber (arr) {
     return Math.floor(Math.random() * max);  
 }
 
-function excuseGenerator (who, action, what, when) {
-    return who[randomNumber(who)] + " " + action[randomNumber(action)] + " " + what[randomNumber(what)] + " " + when[randomNumber(when)];
+function excuseGenerator () {
+  excuse.innerText = who[randomNumber(who)] + " " + action[randomNumber(action)] + " " + what[randomNumber(what)] + " " + when[randomNumber(when)];
 }
 
-window.onload = function() {
-   excuse.innerText = excuseGenerator(who, action, what, when);
-};
+const excuseGeneratorButton = document.getElementById("excuseGeneratorButton");
+
+excuseGeneratorButton.addEventListener("click", function(event){
+    event.preventDefault();
+    excuseGenerator();
+})
