@@ -10,7 +10,7 @@ let when = ['before the class', 'right on time', 'when I finished', 'during my l
 const excuse = document.getElementById("excuse");
 
 function randomNumber (arr) {
-    max = arr.length;
+    let max = arr.length;
     return Math.floor(Math.random() * max);  
 }
 
